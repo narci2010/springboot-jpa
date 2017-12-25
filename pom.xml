@@ -23,7 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <docker.image.prefix>192.168.1.2:8082/springboot</docker.image.prefix>
+        <docker.image.prefix>192.168.3.188:8082/springboot</docker.image.prefix>
     </properties>
 
     <dependencies>
