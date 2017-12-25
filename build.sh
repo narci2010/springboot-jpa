@@ -8,10 +8,14 @@ MYIMAGE=192.168.3.188:8082/springboot/springboot-jpa
 #docker login 192.168.3.188:8082 -u admin -p admin123
 
 # stop all container
-docker kill $(docker ps -q)
+if [ -n "$(docker ps -q)" ]; then
+　　docker kill $(docker ps -q)
+fi
 
 # remove all container
-docker rm $(docker ps -aq)
+if [ -n "$(docker ps -aq)" ]; then
+　　docker rm $(docker ps -aq)
+fi
 
 # remove old images
 docker images | grep 192.168.3.188:8082/springboot/springboot-jpa | awk '{print $3}' | xargs docker rmi
