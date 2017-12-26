@@ -21,7 +21,7 @@ fi
 #docker images | grep 192.168.3.188:8082/springboot/springboot-jpa | awk '{print $3}' | xargs docker rmi
 
 if [ -n "$(docker images -q)" ]; then
-　　docker images | awk '{print $3}' | xargs docker rmi
+　　docker images | grep 192.168.3.188:8082/springboot/springboot-jpa | awk '{print $3}' | xargs docker rmi
 fi
 # build jar and image
 mvn package -e -X docker:build -DskipTest
